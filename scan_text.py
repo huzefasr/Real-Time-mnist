@@ -1,9 +1,16 @@
 import cv2
 import numpy
 import matplotlib
+import h5py
+import keras
+from keras.models import load_model
+import numpy as np
 
 def infer(crop):
-    ##############
+    model = load_model('mnist-test.h5')
+    image = np.resize(crop,(28,28,1))
+    result = model.predict(image)
+    print(result)
 
 
 ###CODE
